@@ -111,7 +111,7 @@
 
         <label class="required" for="phone">Phone Number</label>
         <input type="text" id="phone" placeholder="e.g. 6010848299 or 012-3456789" required>
-        <div class="error" id="phoneError">Invalid phone number. Use format like 0123456789 or 012-3456789</div>
+        <div class="error" id="phoneError">Invalid phone number. Use format like 012-3456789</div>
 
         <label class="required" for="ic">Malaysian IC Number</label>
         <input type="text" id="ic" placeholder="e.g. 990101-14-1234" required>
@@ -165,7 +165,7 @@
     document.getElementById('phone').addEventListener('blur', () => {
         const val = document.getElementById('phone').value.trim();
         if (!val) showError('phoneError', 'This field is required.');
-        else if (!phoneRegex.test(val)) showError('phoneError', 'Invalid phone number. Use format like 0123456789 or 012-3456789');
+        else if (!phoneRegex.test(val)) showError('phoneError', 'Invalid phone number. Use format like 012-3456789');
         else hideError('phoneError');
     });
 
@@ -189,7 +189,7 @@
 
         const phone = document.getElementById('phone').value.trim();
         if (!phone) { showError('phoneError', 'This field is required.'); valid = false; }
-        else if (!phoneRegex.test(phone)) { showError('phoneError', 'Invalid phone number. Use format like 0123456789 or 012-3456789'); valid = false; }
+        else if (!phoneRegex.test(phone)) { showError('phoneError', 'Invalid phone number. Use format like 012-3456789'); valid = false; }
         else hideError('phoneError');
 
         const ic = document.getElementById('ic').value.trim();
